@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon & Wayfair Listing Builder"
+  short_description: "将证据、关键词和买家问题转化为平台原生 Listing"
+  default_prompt: "Use $amazon-wayfair-listing-builder to build an evidence-backed, platform-native Amazon or Wayfair Listing and field-level action plan."
