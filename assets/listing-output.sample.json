@@ -1,0 +1,202 @@
+{
+  "platform": "amazon",
+  "marketplace": "US",
+  "category": "Example category",
+  "sample_notice": "Fictional data for demonstrating the Skill and audit script; not a publishable product record.",
+  "product_facts": {
+    "dimensions": "3.5 x 0.8 x 0.6 in",
+    "compatible_cable_diameter": "2–6 mm",
+    "material": "silicone",
+    "mounting": "included adhesive backing for clean, dry, smooth non-porous surfaces",
+    "included_components": "one five-slot cable organizer",
+    "care": "wipe with a soft cloth"
+  },
+  "input_summary": {
+    "keyword_source": "Fictional user-provided keyword brief",
+    "buyer_question_source": "Fictional user-provided VOC brief",
+    "data_missing": [],
+    "assumptions": []
+  },
+  "keyword_placement": [
+    {
+      "keyword": "desk cable organizer",
+      "upstream_role": "core product term",
+      "relevance": "high",
+      "evidence_state": "supported",
+      "status": "use",
+      "placement": ["title", "bullets"],
+      "rationale": "Accurately names the product."
+    },
+    {
+      "keyword": "waterproof cable organizer",
+      "upstream_role": "unsupported feature term",
+      "relevance": "low",
+      "evidence_state": "not supported",
+      "status": "irrelevant",
+      "placement": [],
+      "rationale": "The supplied product record does not support this use or claim."
+    }
+  ],
+  "question_library": [
+    {
+      "priority": "P1",
+      "question": "Will every cable fit?",
+      "source_evidence": "Fictional user-provided VOC brief",
+      "purchase_stage": "fit",
+      "answer_status": "answerable",
+      "current_answer": "No. It is specified for compatible round cables measuring 2–6 mm in diameter.",
+      "best_placement": ["bullets", "qa"],
+      "evidence_needed": null,
+      "publish_status": "publish"
+    },
+    {
+      "priority": "P1",
+      "question": "Is it waterproof?",
+      "source_evidence": "Fictional user-provided keyword opportunity",
+      "purchase_stage": "risk",
+      "answer_status": "evidence_pending",
+      "current_answer": null,
+      "best_placement": ["qa"],
+      "evidence_needed": "Product-specific water-ingress test and verified use boundary",
+      "publish_status": "hold"
+    }
+  ],
+  "claim_expression": [
+    {
+      "opportunity": "Fits compatible round cables measuring 2–6 mm",
+      "current_evidence": "Verified engineering drawing",
+      "current_status": "verified",
+      "allowed_wording_now": "For compatible round cables measuring 2–6 mm",
+      "boundary": "Does not claim every cable will fit",
+      "evidence_needed": null,
+      "wording_unlocked_after_proof": null,
+      "priority": "P1"
+    },
+    {
+      "opportunity": "Waterproof performance",
+      "current_evidence": "DATA_MISSING",
+      "current_status": "evidence_pending",
+      "allowed_wording_now": null,
+      "boundary": "Do not imply resistance to water without product-specific evidence.",
+      "evidence_needed": "Product-specific water-ingress test and verified use boundary",
+      "wording_unlocked_after_proof": "Use only the level and conditions supported by the test result.",
+      "priority": "P1"
+    }
+  ],
+  "title": "ExampleBrand 5-Slot Desk Cable Organizer, Flexible Silicone Cord Holder",
+  "bullets": [
+    "KEEPS EVERYDAY CABLES WITHIN REACH — Five separate slots organize 2–6 mm charging and accessory cords along a desk edge.",
+    "FLEXIBLE SLOT DESIGN — Silicone construction holds compatible round cables without adding a rigid edge to the work surface.",
+    "MADE FOR SMOOTH SURFACES — The adhesive backing mounts to a clean, dry, smooth non-porous desk or nightstand surface.",
+    "COMPACT FIVE-SLOT FORMAT — The 3.5 x 0.8 x 0.6 in organizer provides five routing positions; measure cables and the mounting area first.",
+    "ONE ORGANIZER INCLUDED — The package contains one five-slot organizer; wipe it with a soft cloth for routine care."
+  ],
+  "description": "Create a tidier charging area without repeatedly searching behind the desk. This five-slot desk cable organizer keeps compatible 2–6 mm accessory cords in predictable positions. Its 3.5 x 0.8 x 0.6 in silicone body is designed for clean, dry, smooth non-porous desks and nightstands. Measure cable diameter and the mounting area before installation. Apply the included adhesive backing to the prepared surface and wipe the organizer with a soft cloth as needed. Package includes one five-slot cable organizer.",
+  "a_plus_brief": [
+    {
+      "communication_job": "Explain fit before installation",
+      "buyer_question": "Will my cable and surface fit?",
+      "headline": "Measure First, Mount Once",
+      "body": "Designed for compatible 2–6 mm round cables and clean, dry, smooth non-porous mounting surfaces.",
+      "image_concept": "Dimension callouts beside a cable gauge and prepared desk surface",
+      "mobile_note": "Keep the 2–6 mm range inside the center safe area.",
+      "dependency": "Verified engineering drawing and installation specification",
+      "status": "ready"
+    }
+  ],
+  "search_terms": "cord keeper wire routing holder nightstand charging cable management",
+  "qa": [
+    {
+      "question": "How many cable slots are included?",
+      "answer": "The organizer has five separate routing slots."
+    },
+    {
+      "question": "Where can I use the organizer?",
+      "answer": "The adhesive backing is specified for clean, dry, smooth non-porous desks and nightstands."
+    },
+    {
+      "question": "What material is it made from?",
+      "answer": "The organizer uses flexible silicone, according to the product specification."
+    },
+    {
+      "question": "Will every cable fit?",
+      "answer": "No. It is specified for compatible round cables measuring 2–6 mm in diameter."
+    },
+    {
+      "question": "How should I prepare the surface?",
+      "answer": "Clean and dry a smooth non-porous mounting area before applying the included adhesive backing."
+    },
+    {
+      "question": "How large is the organizer?",
+      "answer": "The organizer measures 3.5 x 0.8 x 0.6 in; measure the mounting area before installation."
+    },
+    {
+      "question": "How do I clean it?",
+      "answer": "Wipe the organizer with a soft cloth and avoid care methods not listed in the product instructions."
+    },
+    {
+      "question": "What comes in the package?",
+      "answer": "The package includes one five-slot desk cable organizer."
+    }
+  ],
+  "required_keywords": [
+    "desk cable organizer",
+    "cord holder",
+    "cable management"
+  ],
+  "claims": [
+    {
+      "text": "Five separate routing slots",
+      "evidence": "Verified product specification: five-slot mold",
+      "status": "verified"
+    },
+    {
+      "text": "Flexible silicone construction",
+      "evidence": "Verified bill of materials",
+      "status": "verified"
+    },
+    {
+      "text": "Fits compatible round cables measuring 2–6 mm",
+      "evidence": "Verified engineering drawing",
+      "status": "verified"
+    },
+    {
+      "text": "Measures 3.5 x 0.8 x 0.6 in",
+      "evidence": "Verified engineering drawing",
+      "status": "verified"
+    },
+    {
+      "text": "Adhesive mounting on clean, dry, smooth non-porous surfaces",
+      "evidence": "Verified installation specification",
+      "status": "verified"
+    },
+    {
+      "text": "Package includes one organizer",
+      "evidence": "Verified packaging specification",
+      "status": "verified"
+    },
+    {
+      "text": "Wipe with a soft cloth",
+      "evidence": "Verified care instruction",
+      "status": "verified"
+    },
+    {
+      "text": "Waterproof performance",
+      "copy_terms": ["waterproof"],
+      "evidence": "DATA_MISSING",
+      "status": "evidence_pending"
+    }
+  ],
+  "execution_changes": [
+    {
+      "priority": "P1",
+      "field": "title",
+      "current_issue": "No existing Listing was supplied.",
+      "exact_action": "Publish the proposed evidence-backed title after category limit review.",
+      "replacement_or_hold": "ExampleBrand 5-Slot Desk Cable Organizer, Flexible Silicone Cord Holder",
+      "dependency": "Verify the current category title limit.",
+      "executable_now": false,
+      "acceptance_check": "Title matches verified product facts and the current field limit."
+    }
+  ]
+}

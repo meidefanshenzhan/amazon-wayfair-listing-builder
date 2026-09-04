@@ -1,0 +1,32 @@
+{
+  "platform": "wayfair",
+  "marketplace": "US",
+  "category": "Example category",
+  "sample_notice": "Schema-only fictional example; replace every value with focal-product evidence.",
+  "product_name": "Example Product Name",
+  "about_this_product": "Example evidence-backed product summary.",
+  "features": ["Example feature with one communication job."],
+  "whats_included": [],
+  "dimensions": {},
+  "structured_details": {},
+  "variations": [],
+  "media_brief": [],
+  "discovery_terms": "example generic terms",
+  "conversational_coverage": [],
+  "published_qa": [],
+  "required_keywords": [],
+  "keyword_placement": [],
+  "question_library": [
+    {
+      "priority": "P1",
+      "question": "What verified fact answers the buyer's main fit question?",
+      "answer_status": "evidence_pending",
+      "current_answer": "",
+      "best_placement": ["structured_details"],
+      "evidence_needed": "Focal-product specification",
+      "publish_status": "hold"
+    }
+  ],
+  "claims": [],
+  "execution_changes": []
+}

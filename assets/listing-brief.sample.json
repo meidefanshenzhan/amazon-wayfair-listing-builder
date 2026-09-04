@@ -1,0 +1,51 @@
+{
+  "platform": "amazon",
+  "marketplace": "US",
+  "language": "en-US",
+  "category": "DATA_MISSING",
+  "brand": "ExampleBrand",
+  "product_type": "example product",
+  "variation": "DATA_MISSING",
+  "product_facts": {
+    "dimensions": "DATA_MISSING",
+    "materials": ["DATA_MISSING"],
+    "included_components": ["DATA_MISSING"],
+    "compatibility": ["DATA_MISSING"],
+    "care": "DATA_MISSING",
+    "certifications": []
+  },
+  "target_buyer": "DATA_MISSING",
+  "primary_job": "DATA_MISSING",
+  "use_cases": ["DATA_MISSING"],
+  "existing_listing": null,
+  "upstream_keyword_findings": [
+    {
+      "keyword": "example product",
+      "role": "core product term",
+      "priority": "high",
+      "source": "user-provided keyword analysis",
+      "source_date": "DATA_MISSING"
+    }
+  ],
+  "upstream_buyer_questions": [
+    {
+      "question": "Will this fit my use case?",
+      "priority": "high",
+      "source": "user-provided VOC analysis",
+      "source_date": "DATA_MISSING"
+    }
+  ],
+  "claim_evidence": [
+    {
+      "claim": "DATA_MISSING",
+      "evidence": "DATA_MISSING",
+      "status": "evidence_pending"
+    }
+  ],
+  "upstream_artifacts": {
+    "traffic_analysis": null,
+    "review_analysis": null,
+    "product_evidence": null
+  },
+  "requested_outputs": ["full"]
+}
