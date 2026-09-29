@@ -34,6 +34,12 @@ def parse_args() -> argparse.Namespace:
         help="Optional verified marketplace/category title character limit",
     )
     parser.add_argument(
+        "--item-highlights-limit",
+        type=int,
+        default=None,
+        help="Optional verified Amazon Item Highlights character limit",
+    )
+    parser.add_argument(
         "--search-terms-byte-limit",
         type=int,
         default=None,
@@ -63,6 +69,7 @@ def text_fields(data: dict[str, Any]) -> dict[str, str]:
     )
     return {
         "title": str(data.get("title", data.get("product_name", ""))),
+        "item_highlights": str(data.get("item_highlights", "")),
         "bullets": " ".join(str(item) for item in bullets),
         "description": str(data.get("description", data.get("about_this_product", ""))),
         "search_terms": str(data.get("search_terms", data.get("discovery_terms", ""))),
@@ -94,7 +101,7 @@ def audit(data: dict[str, Any], args: argparse.Namespace) -> dict[str, Any]:
         raise ValueError("platform must be `amazon` or `wayfair`")
     fields = text_fields(data)
     all_frontend = " ".join(
-        fields[name] for name in ("title", "bullets", "description", "qa")
+        fields[name] for name in ("title", "item_highlights", "bullets", "description", "qa")
     )
     all_copy = f"{all_frontend} {fields['search_terms']}"
     required_keywords = require_type(
@@ -206,6 +213,12 @@ def audit(data: dict[str, Any], args: argparse.Namespace) -> dict[str, Any]:
             issues.append(
                 f"keyword_placement[{index}] has invalid status `{status or 'missing'}`."
             )
+        coverage_state = str(item.get("coverage_state", ""))
+        allowed_coverage_states = {"exact", "close_variant", "semantic_root", "backend", "uncovered", "not_applicable", ""}
+        if coverage_state not in allowed_coverage_states:
+            issues.append(
+                f"keyword_placement[{index}] has invalid coverage_state `{coverage_state}`."
+            )
 
     allowed_priorities = {"P0", "P1", "P2"}
     allowed_answer_statuses = {"answerable", "evidence_pending", "irrelevant"}
@@ -299,10 +312,19 @@ def audit(data: dict[str, Any], args: argparse.Namespace) -> dict[str, Any]:
             issues.append(f"execution_changes[{index}] is missing an exact action.")
 
     title_chars = len(fields["title"])
+    item_highlights_chars = len(fields["item_highlights"])
     search_terms_bytes = len(fields["search_terms"].encode("utf-8"))
     if args.title_limit is not None and title_chars > args.title_limit:
         issues.append(
             f"Title has {title_chars} characters, above supplied limit {args.title_limit}."
+        )
+    if (
+        platform == "amazon"
+        and args.item_highlights_limit is not None
+        and item_highlights_chars > args.item_highlights_limit
+    ):
+        issues.append(
+            f"Item Highlights has {item_highlights_chars} characters, above supplied limit {args.item_highlights_limit}."
         )
     if (
         platform == "amazon"
@@ -345,6 +367,7 @@ def audit(data: dict[str, Any], args: argparse.Namespace) -> dict[str, Any]:
         "platform": platform,
         "counts": {
             "title_characters": title_chars,
+            "item_highlights_characters": item_highlights_chars,
             "bullet_count": len(bullets),
             "description_characters": len(fields["description"]),
             "search_terms_utf8_bytes": search_terms_bytes,
@@ -389,6 +412,7 @@ def markdown_report(result: dict[str, Any], source: Path) -> str:
     else:
         field_lines = [
             f"- Title characters: {counts['title_characters']}",
+            f"- Item Highlights characters: {counts['item_highlights_characters']}",
             f"- Bullets: {counts['bullet_count']}",
             f"- Description characters: {counts['description_characters']}",
             f"- Search Terms UTF-8 bytes: {counts['search_terms_utf8_bytes']}",

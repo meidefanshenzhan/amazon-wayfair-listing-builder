@@ -38,15 +38,15 @@ Read [references/data-and-tools.md](references/data-and-tools.md) when raw produ
 
 ## Establish the input contract
 
-Collect or infer platform, marketplace, language, category, brand, product type, variations, verified facts, included components, dimensions, materials, use boundaries, care, assembly, warranty, certifications, target buyer, primary job, use cases, differentiation, current fields, keyword priorities, buyer questions and requested outputs.
+Collect or infer platform, marketplace, language, category, brand, product type, variations, verified facts, included components, dimensions, materials, use boundaries, care, assembly, warranty, certifications, target buyer, primary job, use cases, differentiation, current fields, keyword priorities, buyer questions and requested outputs. For Amazon, also identify the available Search Demand dataset, Shopping Intent/buyer-question dataset, and any Supplemental Semantic Assets; keep their authority levels separate.
 
 Use [assets/listing-brief.sample.json](assets/listing-brief.sample.json) when structured input helps. Never invent specifications, tests, certifications, market metrics, platform limits or buyer evidence.
 
 ## Produce the shared deliverables
 
 1. Input summary.
-2. Keyword placement table.
-3. Buyer-question library.
+2. Focal-product keyword placement and coverage table.
+3. Buyer-question / buyer-concern library and answer-coverage table.
 4. Claim-and-expression table.
 5. Platform-native Listing package.
 6. Field-level execution changes.
@@ -58,6 +58,8 @@ The Listing package follows the selected platform reference. Amazon Search Terms
 ## Apply evidence without discarding opportunity
 
 - Use verified claims and carefully bounded observed claims.
+- For Amazon, prioritize the researched keyword library over plugin/AI-generated semantic roots. Use Alexa/Rufus-style questions to discover and prioritize buyer concerns the Listing should answer, not as a substitute search-volume source.
+- Optimize for clear, natural entity/attribute/use-case semantics and answerability; never promise Alexa/Rufus recommendation or treat keyword repetition as a recommendation mechanism.
 - Connect each `evidence_pending` opportunity to a proof task and affected field.
 - Treat missing proof as unknown, not as evidence of failure.
 - Keep internal statuses and hold instructions out of customer-facing copy.

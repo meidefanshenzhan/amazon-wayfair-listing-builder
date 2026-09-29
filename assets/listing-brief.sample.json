@@ -1,8 +1,8 @@
 {
   "platform": "amazon",
-  "marketplace": "US",
-  "language": "en-US",
-  "category": "DATA_MISSING",
+  "marketplace": "DE",
+  "language": "de-DE",
+  "category": "EXAMPLE_ONLY",
   "brand": "ExampleBrand",
   "product_type": "example product",
   "variation": "DATA_MISSING",
@@ -12,7 +12,25 @@
     "included_components": ["DATA_MISSING"],
     "compatibility": ["DATA_MISSING"],
     "care": "DATA_MISSING",
+    "assembly": "DATA_MISSING",
     "certifications": []
+  },
+  "research_layers": {
+    "search_demand": {
+      "authority": "primary_keyword_source",
+      "source": "user-provided keyword workbook",
+      "fields_available": ["relevance", "search_volume_or_tier", "intent", "root_precision", "competitor_organic_rank", "product_applicability"]
+    },
+    "shopping_intent": {
+      "authority": "primary_buyer_concern_source",
+      "source": "user-provided Alexa/Rufus/VOC question data",
+      "note": "frequency is a concern signal, not search volume"
+    },
+    "supplemental_semantic_assets": {
+      "authority": "reference_only",
+      "source": "optional AI/plugin-generated roots",
+      "note": "must not override Search Demand, Shopping Intent, or Product Truth"
+    }
   },
   "target_buyer": "DATA_MISSING",
   "primary_job": "DATA_MISSING",
@@ -21,18 +39,29 @@
   "upstream_keyword_findings": [
     {
       "keyword": "example product",
-      "role": "core product term",
-      "priority": "high",
-      "source": "user-provided keyword analysis",
-      "source_date": "DATA_MISSING"
+      "relevance": "high",
+      "traffic_tier": "DATA_MISSING",
+      "intent": "DATA_MISSING",
+      "root_precision": "DATA_MISSING",
+      "semantic_role": "core product entity",
+      "competitor_organic_evidence": "DATA_MISSING",
+      "product_applicability": "supported",
+      "source": "user-provided keyword analysis"
     }
   ],
   "upstream_buyer_questions": [
     {
       "question": "Will this fit my use case?",
-      "priority": "high",
-      "source": "user-provided VOC analysis",
-      "source_date": "DATA_MISSING"
+      "frequency": "DATA_MISSING",
+      "source": "user-provided shopping-intent research",
+      "note": "Question evidence identifies a concern; it does not prove the focal-product answer."
+    }
+  ],
+  "supplemental_semantic_assets": [
+    {
+      "term": "example semantic phrase",
+      "source": "optional plugin/AI output",
+      "authority": "reference_only"
     }
   ],
   "claim_evidence": [
@@ -42,10 +71,5 @@
       "status": "evidence_pending"
     }
   ],
-  "upstream_artifacts": {
-    "traffic_analysis": null,
-    "review_analysis": null,
-    "product_evidence": null
-  },
   "requested_outputs": ["full"]
 }

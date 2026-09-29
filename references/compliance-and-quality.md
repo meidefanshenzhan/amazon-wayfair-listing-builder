@@ -1,28 +1,40 @@
-# Compliance and Quality Preflight
+# Compliance and Quality Guardrails
 
-## Dynamic rules
+## Dynamic platform rules
 
-Marketplace limits, category templates, restricted-product rules, required attributes and variation policies change. Verify them in the current Amazon Seller Central or Wayfair supplier portal. Treat remembered and competitor-observed limits as assumptions.
+Marketplace rules change. Verify live category/product-type requirements when they affect publication. A dated default profile may guide drafting, but never present it as permanently universal.
 
-For Wayfair, prefer authoritative supplier policies; competitor PDPs show presentation conventions only. For Amazon, prefer Seller Central or authoritative Amazon documentation.
+## Evidence hierarchy
+
+Product Truth controls claims. Search Demand controls keyword priority. Shopping Intent controls which buyer questions deserve answers. Supplemental AI/plugin semantic assets are reference-only and cannot prove demand, relevance, product capability or compliance.
+
+`Buyer concern != product claim.` A repeated question such as “Is it safe for children?” proves only that shoppers care about safety. It does not authorize `child-safe`, `kindersicher`, `non-toxic`, load-bearing, certification or similar claims.
 
 ## High-risk claims
 
-Flag absolutes/guarantees, superiority/rank, health/medical outcomes, safety, environmental claims, certifications/approvals, universal compatibility/performance, endorsements/awards and competitor brands or identifiers. A term triggers review; context, evidence, category and marketplace determine the decision.
+Require strong product-specific evidence for absolutes/guarantees, superiority/rank, health/safety, environmental claims, certifications, compatibility, endorsements and quantified performance. Preserve useful unsupported opportunities as `evidence_pending` rather than deleting them or publishing them.
 
-## Consistency and language
+## Search-language quality
 
-Cross-check every field, attribute, image, variation, package and instruction document. Distinguish dimensions/units, net/gross weight, capacity, materials, quantities, components, compatibility, assembly, care, safety hardware, warnings, certifications and warranty.
+Reject keyword stuffing, unreadable capitalization, unnatural localization, fabricated customer voice and awkward grammar created only to combine roots.
 
-Reject keyword stuffing, repeated noun chains, unreadable capitalization, vague hype, hidden boundaries, unnatural localization and fabricated customer voice. Features/bullets should not repeat the same inventory unless each occurrence has a distinct communication job.
+For compound-rich languages:
 
-## Priorities and interpretation
+- distinguish exact compound coverage from separated-root semantic coverage;
+- prefer a natural exact phrase or close variant when a high-value precise term matters;
+- do not assume that splitting a compound into component roots provides identical lexical coverage;
+- do not repeat exact phrases when a natural semantic expression already serves the user unless Search Demand justifies the exact term.
 
-- `P0`: unsupported/high-risk wording remains, a required fact conflicts, trademark/field validation fails, or category policy requires missing evidence.
-- `P1`: proof would materially improve content but a safe version can publish.
-- `P2`: optional copy, layout or test idea.
+## Cross-field consistency
 
-Keep unsupported opportunities visible internally with boundary, proof task and stronger wording unlocked after proof. Deterministic audits cannot establish platform approval, legal compliance, ranking impact, conversion lift or AI recommendation.
+Product dimensions, materials, included components, counts, colors, compatibility, care, assembly, warranty and variation facts must agree across title, item highlights, bullets/features, description, rich content, attributes and images.
 
-End with blockers, gaps, tests, evidence opportunities, executable versus held actions and required human/platform review.
+## Shopping-assistant quality
 
+Use Alexa/Rufus-style question research to improve answerability and completeness, not to promise assistant recommendation. Prefer explicit, verified entity-attribute-use relationships and useful buyer-facing answers. Platform/service questions such as price alerts or returns should not distort product copy unless the platform specifically provides a field for them.
+
+## Priority
+
+- `P0`: publication blocker or unsafe/unsupported customer-facing content.
+- `P1`: meaningful relevance, clarity, conversion, evidence or coverage opportunity.
+- `P2`: optional refinement or experiment.
